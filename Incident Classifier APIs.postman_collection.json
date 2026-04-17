@@ -1,0 +1,189 @@
+{
+  "info": {
+    "_postman_id": "eba4e74c-4cf4-43fd-81b3-ed141a1d1c61",
+    "name": "Incident Classifier APIs",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54106254",
+    "_collection_link": "https://go.postman.co/collection/54106254-eba4e74c-4cf4-43fd-81b3-ed141a1d1c61?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Topics",
+      "item": [
+        {
+          "name": "Create Topic",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Delhi Bomb Blast\",\n  \"keywords\": [\"Delhi\", \"blast\", \"explosion\", \"bomb\"]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/topics",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "topics"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Topics",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/topics",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "topics"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Topics by id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/topics/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "topics",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Classification",
+      "item": [
+        {
+          "name": "Text Classification",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"text\": \"A powerful explosion occurred near Connaught Place in Delhi this morning. Witnesses reported a loud blast followed by thick smoke. The Delhi Bomb Blast has left several injured. In a separate incident, an explosion was reported in the industrial area of Kanpur. The Kanpur Bomb Blast damaged several factories. Police and rescue teams reached the spot immediately. Authorities are investigating both incidents. No group has claimed responsibility yet. Meanwhile, the stock market remained stable today. Rainfall is expected in Mumbai by evening. A second blast in Delhi was heard near India Gate, but no casualties were reported. In Kanpur, another explosion took place near the railway station. This is the second Kanpur blast today.\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/documents/text",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "documents",
+                "text"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "File Upload Classification",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "uuid": "dd7d3fc8-9c85-4117-94bf-8921b8a9405e",
+                  "src": "/Users/anishgoyal/Downloads/file-example_PDF_1MB.pdf"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/documents",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "documents"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Classifications by Id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/documents/1/results",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "documents",
+                "1",
+                "results"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
