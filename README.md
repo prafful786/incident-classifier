@@ -31,6 +31,8 @@ A Postman collection is provided to exercise the API. You can import the collect
 
 ```
 https://www.postman.com
-```//More information in the file /Incident Classifier APIs.postman_collection.json
+A Postman collection is provided to exercise the API. You can import the collection using the following file:
+
+Incident Classifier APIs.postman_collection.json
 
 
